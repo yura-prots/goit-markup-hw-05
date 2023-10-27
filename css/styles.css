@@ -11,6 +11,8 @@
   --hero-bg-color: #c4c4c4;
   --footer-bg-color: #2f303a;
   --address-text-color: rgba(255, 255, 255, 0.6);
+
+  --hover-focus-time: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -103,6 +105,13 @@ body {
   text-decoration: none;
 
   color: var(--secondary-text-color);
+
+  transition: color 250ms var(--hover-focus-time);
+}
+
+.nav .link:hover,
+.nav .link:focus {
+  color: var(--accent-color);
 }
 
 .nav .link.current {
@@ -123,11 +132,6 @@ body {
 
   border-radius: 2px;
   background-color: var(--accent-color);
-}
-
-.nav .link:hover,
-.nav .link:focus {
-  color: var(--accent-color);
 }
 
 .info-list {
@@ -154,6 +158,8 @@ body {
   text-decoration: none;
 
   color: var(--primary-text-color);
+
+  transition: color 250ms var(--hover-focus-time);
 }
 
 .info-link:hover,
@@ -212,6 +218,7 @@ body {
 
 .hero-button {
   padding: 10px 24px;
+  border: none;
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 
@@ -223,6 +230,8 @@ body {
 
   color: var(--primary-bg-color);
   background-color: var(--accent-color);
+
+  transition: color 250ms var(--hover-focus-time);
 }
 
 .hero-button:hover {
@@ -383,11 +392,12 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
 
   width: 44px;
   height: 44px;
 
-  border-radius: 50%;
+  transition: background-color 250ms var(--hover-focus-time);
 }
 
 .socials-link:hover,
@@ -395,15 +405,17 @@ img {
   background-color: var(--accent-color);
 }
 
-.socials-link:hover .socials-icon,
-.socials-link:focus .socials-icon {
-  fill: var(--primary-bg-color);
-}
-
 .socials-icon {
   margin: 0;
 
   fill: var(--primary-icon-color);
+
+  transition: fill 250ms var(--hover-focus-time);
+}
+
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+  fill: var(--primary-bg-color);
 }
 
 /* Постійні клієнти */
@@ -426,7 +438,8 @@ img {
 
   border-radius: 4px;
   border: 1px solid var(--primary-icon-color);
-  color: var(--primary-icon-color);
+
+  transition: border-color 250ms var(--hover-focus-time);
 }
 
 .clients-link:hover,
@@ -436,6 +449,8 @@ img {
 
 .clients-icon {
   fill: var(--primary-icon-color);
+
+  transition: fill 250ms var(--hover-focus-time);
 }
 
 .clients-link:hover .clients-icon,
@@ -470,6 +485,10 @@ img {
   background-color: var(--secondary-bg-color);
   border: none;
   border-radius: 4px;
+
+  transition: color 250ms var(--hover-focus-time),
+    background-color 250ms var(--hover-focus-time),
+    box-shadow 250ms var(--hover-focus-time);
 }
 
 .portfolio .list-button:hover,
@@ -499,9 +518,11 @@ img {
   margin-bottom: 0;
 }
 
-.portfolio .link {
+.works .link {
   display: block;
+
   text-decoration: none;
+  transition: box-shadow 250ms var(--hover-focus-time);
 }
 
 .works .link:hover,
@@ -595,15 +616,17 @@ img {
   text-decoration: none;
 
   color: var(--address-text-color);
-}
 
-.address .link:last-child {
-  margin-bottom: 0;
+  transition: color 250ms var(--hover-focus-time);
 }
 
 .address .link:hover,
 .address .link:focus {
   color: var(--accent-color);
+}
+
+.address .link:last-child {
+  margin-bottom: 0;
 }
 
 .footer .socials {
