@@ -10,6 +10,5 @@
 
   function toggleModal() {
     refs.backdrop.classList.toggle('is-hidden');
-    console.log('clicked');
   }
 })();

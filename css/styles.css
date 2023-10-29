@@ -252,11 +252,15 @@ img {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+
+  transform: scaleX(1);
+  transition: transform 250ms var(--hover-focus-time);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  transform: scaleX(0);
 }
 
 .backdrop .data-modal {
@@ -285,6 +289,12 @@ img {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--primary-bg-color);
+
+  cursor: pointer;
+}
+
+.data-modal-icon {
+  display: block;
 }
 
 /* Особливості */
