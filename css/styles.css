@@ -254,21 +254,24 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
 
   z-index: 10;
-  transform: scaleX(1);
-  transition: transform 250ms var(--hover-focus-time);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms var(--hover-focus-time),
+    visibility 250ms var(--hover-focus-time);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transform: scaleX(0);
 }
 
 .backdrop .data-modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleX(1);
+  transition: transform 250ms var(--hover-focus-time);
 
   width: 528px;
   height: 581px;
@@ -277,6 +280,10 @@ img {
   background-color: var(--primary-bg-color);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.backdrop.is-hidden > .data-modal {
+  transform: translate(-50%, -50%) scaleX(4);
 }
 
 .data-modal .data-modal-close {
